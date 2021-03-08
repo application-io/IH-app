@@ -1,0 +1,24 @@
+.overlay {
+    background-color: #00000061;
+    position: absolute;
+    z-index: 500;
+    height: 100%;
+    width: 100%;
+    transform: scale(1);
+    opacity: 1;
+    animation: overlayGrow .5s ease-out;
+}
+.overlay:hover{
+    cursor: pointer;
+}
+
+@keyframes overlayGrow {
+    from{
+        transform: scale(0.2);
+        opacity: 0.1;
+    }
+    to{
+        transform: scale(1);
+        opacity: 1;
+    }
+}

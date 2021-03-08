@@ -1,0 +1,33 @@
+.home {
+    padding: 0 100px;
+    height: 100vh;
+    background-color: #00000012;
+}
+.button {
+    box-shadow: 2px 3px 5px rgba(0, 0, 0, 0.5);
+    transform: translateY(50vh) scale(1);
+    animation: button 1s ease-in;
+}
+@keyframes button {
+    0% {
+    transform: translateY(0);
+    }
+    50% {
+    transform: translateY(50vh);
+    }
+    60%{
+    transform: translateY(50vh) scale(1);
+    }
+    70%{
+    transform: translateY(50vh) scale(1.1);
+    }
+    80%{
+    transform: translateY(50vh) scale(1);
+    }
+    90%{
+    transform: translateY(50vh) scale(1.1);
+    }
+    100% {
+    transform: translateY(50vh) scale(1);
+    }
+}
