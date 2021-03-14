@@ -1,25 +1,25 @@
-const passport = require("passport");
-const googleStrategy = require("passport-google-oauth20").Strategy;
-const mongoose = require("mongoose");
-const keys = require("../config/keys");
+const passport = require("passport")
+const googleStrategy = require("passport-google-oauth20").Strategy
+const mongoose = require("mongoose")
+const keys = require("../config/keys")
 
 //
-const User = mongoose.model("users");
+const User = mongoose.model("users")
 
-//
+
 passport.serializeUser((user, done) => {
-  done(null, user.id);
-});
-
-//
+  console.log(user.id)
+  done(null, user.id)
+  //  onmouseleave.log(user.id);
+})
+// //
 passport.deserializeUser((id, done) => {
   User.findById(id).then(user => {
-    done(null, user);
-  });
-});
-//
+    done(null, user)
+  })
+})
 
-//
+
 //
 //google
 passport.use(
@@ -30,28 +30,27 @@ passport.use(
       callbackURL: "/auth/google/callback",
       proxy: true
     },
-    async (accessToken, refreshToken, profile, done) => {
-      //
-        const existingUser = await User.findOne({
-        googleId: profile.id,
-        username: process.env.USERNAME
-        }).catch( (err) => {
-          console.log(err)
-        });
+    (accessToken, refreshToken, profile, done) => {
+        User.findOne({ googleId: profile.id }).then((existingUser) => {
 
-      if (existingUser) {
-        //we already have a recor d with the given profile.id
-        return done(null, existingUser);
-      }
-      //we dont have a user record create a new one
-      const user = await new User({
-        googleId: profile.id,
-        username: process.env.USERNAME
-      }).save();
-      done(null, user);
+            if(existingUser){
+              // we already have a record with the given profile ID
+              done(null, existingUser)
+            }else {
+              // we create a new user
+              new User({ 
+                    googleId: profile.id,
+                    username: profile._json.name,
+                    email: profile._json.email,
+                    picture: profile._json.picture,
+                    locale: profile._json.locale,
+                    verified: profile._json.email_verified
+                }).save().then(user => {
+                done(null, user)
+              })
+            }
 
-      console.log(profile.id);
-    }
+        })
+
+    })
   )
-);
-// console.log("56passport: ", process.env.USERNAME);

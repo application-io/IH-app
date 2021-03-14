@@ -1,26 +1,17 @@
 const express = require("express");
+const keys = require("./config/keys");
 const mongoose = require("mongoose");
 const cookieSession = require("cookie-session");
 const passport = require("passport");
-const keys = require("./config/keys");
 require("./models/user");
 require("./services/passport");
-const app = express();//end
 
 //database connection query
-mongoose.connect(keys.mongoURI, { useNewUrlParser: true }, () => {
-  return { useNewUrlParser: true }; 
-});//end
+mongoose.connect(keys.mongoURI, { useNewUrlParser: true, useUnifiedTopology: true  }, () => {
+  return { useNewUrlParser: true, useUnifiedTopology: true  };  
+})//end
 
-// const MongoClient = require('mongodb').MongoClient;
-// // const uri = "mongodb+srv://IHdbSudoUser:<password>@cluster0.2cwlx.mongodb.net/myFirstDatabase?retryWrites=true&w=majority";
-// const client = new MongoClient(keys.mongoURI, { useNewUrlParser: true, useUnifiedTopology: true });
-
-// client.connect(err => {
-//   const collection = client.db("test").collection("devices");
-//   // perform actions on the collection object
-//   client.close();
-// });
+const app = express();//end
 
 //setting up cookies
 app.use(
@@ -28,10 +19,10 @@ app.use(
     maxAge: 30 * 24 * 60 * 60 * 1000,
     keys: [keys.cookieKey]
   })
-);
+)
 ///
-app.use(passport.initialize());
-app.use(passport.session()); //end
+app.use(passport.initialize())
+app.use(passport.session())  //end
 
 //ALL ROUTES
 //oauth routes
@@ -61,7 +52,7 @@ if( process.env.NODE_ENV === 'production' ) {
 	}//end
 
 	app.get("/welcome", (req, res) => {
-	res.send(`welcome ${process.env.USERNAME}!`);
+	res.send(`welcome ${process.env.USER}!`);
 	//db query
 	// new UserComp({
 	//   username: process.env.USERNAME,

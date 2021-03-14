@@ -1,0 +1,77 @@
+Web App
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+—FUNCTIONS—
+.Auth
+.otp
+.Payment
+.BTC API
+.Blog
+.Barcode+address
+.Email
+.User referral
+.User withdrawal
+.Calculator
+.Google Maps 
+
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+—UI experience—
+
+~Markups~
+.Homepage
+	about us
+	contact us
+	services
+	address
+	
+.User Page
+	Dashboard
+		exchange rate section
+		user ID
+		materialUi FilterTable
+	Settings
+		payments
+	Profile
+
+~UIX~
+Dark theme
+	primary colour:
+	secondary colour: 
+	extras: 
+Light theme
+	primary colour: 
+	secondary colour:
+	extras:
+````````````````````````````````````````````
+Accounts: mongodb — gmail =          investmentheaven.io@gmail.com
+					username =  IHdbSudoUser 
+					password = @#$IHdbSudoUser!
+
+Account: Gmail — Investmentheaven.io@gmail.com
+
+Account GitHub — investmentheaven.io@gmail.com
+				@#$application.io!1445
+
+Account herokuGit  — https://git.heroku.com/thawing-fortress-53688.git
+
+NEW ACCOUNT DETAILS.
+
+GITHUB: 	investmentheaven.dev@gmail.com
+			investmentHeavenTeam
+			@#$investmentHeavenTeam01!
+
+GMAIL: 		investmentheaven.dev@gmail.com
+			@#$investmentHeaven.dev01!
+			investment	heaven
+			7-03-1988
+
+HEROKU:	investmentheaven.dev@gmail.com
+			@#$investmentHeaven.dev.heroku01!
+
+MONGODB:	investmentheaven.dev@gmail.com
+			theHeavenTeam
+			@#$theHeavenTeam.dev01!
+			+447874602880
+			superAppUser
+			@#$superAppUser01!
+pKey			EFYOJNKP
+PrivKey			9694f50e-104d-4cba-bb2e-b3e693b7aba1

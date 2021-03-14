@@ -2,12 +2,12 @@
     background-color: #00000099;
     position: absolute;
     z-index: 1000;
-    height: 50%;
-    width: 50%;
-    transform: scale(1) translate(50%, 50%);
+    min-height: 70%;
+    min-width: 70%;
+    transform: scale(1) translate(25%, 25%);
     opacity: 1;
     animation: modalGrow .5s ease-out;
-    align-items: center;
+    text-align: center;
     color: #f2f2f2;
 }
 .modalIcon{
@@ -21,11 +21,11 @@
 
 @keyframes modalGrow {
     from{
-        transform: translate(50%, 50%) scale(0.2);
+        transform: translate(25%, 25%)scale(0.2);
         opacity: 0.1;
     }
     to{
-        transform: translate(50%, 50%) scale(1);
+        transform: translate(25%, 25%) scale(1);
         opacity: 1;
     }
 }
